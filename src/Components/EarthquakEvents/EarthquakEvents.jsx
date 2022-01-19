@@ -1,8 +1,20 @@
 import React from "react";
-import "EarthquakeEvents.css";
+import EarthquakeEvent from "./EarthquakeEvent";
+import "./EarthquakeEvents.css";
 
 function EarthquakeEvents(props) {
-  return <div>EarthquakeEvents</div>;
+  return (
+    <div>
+      <ul className="latest-earthquakes-list">
+        {props.earthquakeEvents.features.map(element => (
+          <EarthquakeEvent
+            key={element.properties.place}
+            place={element.properties.place}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default EarthquakeEvents;
