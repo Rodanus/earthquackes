@@ -4,6 +4,7 @@ import "./Homepage.css";
 
 function Homepage() {
   const [earthquakeEvents, setEarthquakeEvents] = useState({ features: [] });
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -12,11 +13,15 @@ function Homepage() {
       .then(res => res.json())
       .then(res => {
         setEarthquakeEvents(res);
-      });
+      })
+      .then(() => setIsContentLoaded(true));
   }, []);
 
   return (
     <div className="homepage-container">
+      <div className={isContentLoaded ? "loading hide-loading" : "loading"}>
+        Loading... (Might take up to a minute)
+      </div>
       <h1 className="homepage-title">Latest Earthquakes:</h1>
       <EarthquakeEvents earthquakeEvents={earthquakeEvents} />
     </div>

@@ -5,6 +5,7 @@ import "./Details.css";
 function Details() {
   const [eventDetails, setEventDetails] = useState({});
   const [eventDate, setEventDate] = useState("");
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
   const { eventId } = useParams();
 
   useEffect(() => {
@@ -18,12 +19,16 @@ function Details() {
         const eventDate = new Date(eventtime);
         setEventDate(eventDate.toLocaleString());
         setEventDetails({ title, magnitude, latitude, longitude });
-      });
+      })
+      .then(() => setIsContentLoaded(true));
   }, []);
 
   return (
     <div className="details-container">
       <div>
+        <div className={isContentLoaded ? "loading hide-loading" : "loading"}>
+          Loading...
+        </div>
         <Link to="/" className="homepage-link">
           {"<"} Back To Home
         </Link>
