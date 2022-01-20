@@ -21,7 +21,7 @@ function Details() {
         setEventDetails({ title, magnitude, latitude, longitude });
       })
       .then(() => setIsContentLoaded(true));
-  }, []);
+  }, [eventId]);
 
   return (
     <div className="details-container">
