@@ -8,7 +8,7 @@ function EarthquakeEvents(props) {
       <ul className="latest-earthquakes-list">
         {props.earthquakeEvents.features.map(element => (
           <EarthquakeEvent
-            key={element.properties.place}
+            key={element.id}
             place={element.properties.place}
             time={element.properties.time}
             id={element.id}
