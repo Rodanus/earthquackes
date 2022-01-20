@@ -11,6 +11,7 @@ function EarthquakeEvents(props) {
             key={element.properties.place}
             place={element.properties.place}
             time={element.properties.time}
+            id={element.id}
           />
         ))}
       </ul>

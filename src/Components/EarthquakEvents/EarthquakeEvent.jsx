@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./EarthquakeEvent.css";
 
 function EarthquakeEvent(props) {
@@ -15,8 +16,10 @@ function EarthquakeEvent(props) {
 
   return (
     <li className="earthquake-event-list-element">
-      <h2 className="earthquake-place">{props.place}</h2>
-      <h3 className="earthquake-time">on {eventDate}</h3>
+      <Link to={`/details/${props.id}`}>
+        <h2 className="earthquake-place">{props.place}</h2>
+        <h3 className="earthquake-time">on {eventDate}</h3>
+      </Link>
     </li>
   );
 }
