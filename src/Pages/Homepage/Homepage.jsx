@@ -7,19 +7,16 @@ function Homepage() {
 
   useEffect(() => {
     fetch(
-      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2021-01-01&limit=20"
+      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2021-01-01&limit=8"
     )
       .then(res => res.json())
       .then(res => {
-        // const timestamp = res.features[0].properties.time;
-        // const date = new Date(timestamp);
-        // console.log(date);
         setEarthquakeEvents(res);
       });
   }, []);
 
   return (
-    <div>
+    <div className="homepage-container">
       <h1 className="homepage-title">Latest Earthquakes:</h1>
       <EarthquakeEvents earthquakeEvents={earthquakeEvents} />
     </div>

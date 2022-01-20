@@ -4,7 +4,7 @@ import "./EarthquakeEvents.css";
 
 function EarthquakeEvents(props) {
   return (
-    <div>
+    <div className="earthquake-events-container">
       <ul className="latest-earthquakes-list">
         {props.earthquakeEvents.features.map(element => (
           <EarthquakeEvent
