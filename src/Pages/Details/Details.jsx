@@ -22,22 +22,30 @@ function Details() {
   }, []);
 
   return (
-    <div>
-      <h1>{eventDetails.title}</h1>
-      <h2>{eventDate}</h2>
+    <div className="details-container">
+      <div>
+        <h1 className="event-details-title">{eventDetails.title}</h1>
+        <h2 className="event-details-date">{eventDate}</h2>
 
-      <div className="event-extra-details">
-        <div className="event-extra-detail">
-          <h3 className="event-extra-detail-title">magnitude</h3>
-          <h4 className="event-extra-detail-value">{eventDetails.magnitude}</h4>
-        </div>
-        <div className="event-extra-detail">
-          <h3 className="event-extra-detail-title">latitude</h3>
-          <h4 className="event-extra-detail-value">{eventDetails.latitude}</h4>
-        </div>
-        <div className="event-extra-detail">
-          <h3 className="event-extra-detail-title">longitude</h3>
-          <h4 className="event-extra-detail-value">{eventDetails.longitude}</h4>
+        <div className="event-extra-details">
+          <div className="event-extra-detail">
+            <h3 className="event-extra-detail-title">magnitude</h3>
+            <h4 className="event-extra-detail-value">
+              {eventDetails.magnitude}
+            </h4>
+          </div>
+          <div className="event-extra-detail">
+            <h3 className="event-extra-detail-title">latitude</h3>
+            <h4 className="event-extra-detail-value">
+              {eventDetails.latitude}
+            </h4>
+          </div>
+          <div className="event-extra-detail">
+            <h3 className="event-extra-detail-title">longitude</h3>
+            <h4 className="event-extra-detail-value">
+              {eventDetails.longitude}
+            </h4>
+          </div>
         </div>
       </div>
     </div>
