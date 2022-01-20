@@ -10,6 +10,7 @@ function EarthquakeEvents(props) {
           <EarthquakeEvent
             key={element.properties.place}
             place={element.properties.place}
+            time={element.properties.time}
           />
         ))}
       </ul>
