@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Details.css";
 
 function Details() {
@@ -24,6 +24,9 @@ function Details() {
   return (
     <div className="details-container">
       <div>
+        <Link to="/" className="homepage-link">
+          {"<"} Back To Home
+        </Link>
         <h1 className="event-details-title">{eventDetails.title}</h1>
         <h2 className="event-details-date">{eventDate}</h2>
 

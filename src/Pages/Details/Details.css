@@ -6,6 +6,19 @@
   text-align: center;
 }
 
+.homepage-link {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-decoration: none;
+}
+
+.homepage-link:hover {
+  color: #eec643;
+}
+
 .event-details-title {
   margin-bottom: 1rem;
 }
